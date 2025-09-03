@@ -16,12 +16,12 @@ const Button: React.FC<ButtonProps> = ({
 
   // Define what each variant means
   const variantStyles = {
-    primary: "",
-    secondary: ""
+    primary: "bg-seagreen text-white hover:bg-green-700",
+    secondary: "border border-seagreen text-seagreen hover:bg-seagreen hover:text-white",
   };
 
   // Base styles that apply to all buttons
-  const baseStyles = "";
+  const baseStyles = "rounded-lg";
   
   // Combine styles
   const buttonClasses = `${baseStyles} ${variantStyles[variant]} ${className}`;
