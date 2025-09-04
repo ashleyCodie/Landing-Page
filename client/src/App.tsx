@@ -7,8 +7,8 @@ import Paragraph from "./components/reusable/paragraph"
 function App() {
   return (
     <main className="flex flex-col items-center justify-center min-h-screen p-6 bg-gray-50">
-      <Paragraph text="Hello! This is a reusable paragraph." />
-      <Paragraph text="It can be styled with custom classes." className="text-gray-600 mt-2" />
+      <Paragraph text="Light weight running shoes with enhanced cushioning for maximum comfort." />
+     
 
       <div className="mt-6">
         <Button
