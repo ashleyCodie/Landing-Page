@@ -2,7 +2,6 @@
 import React from "react";
 import Heading from "../components/reusable/Heading";
 import Paragraph from "../components/reusable/paragraph";
-import Button from "../components/reusable/Button";
 
 
 const Footer: React.FC = () => (

@@ -3,7 +3,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Heading from "../components/reusable/Heading";
 import Paragraph from "../components/reusable/paragraph";
-import Button from "../components/reusable/Button";
 
 
 export interface NavBarProps {
@@ -33,14 +32,15 @@ const NavBar: React.FC<NavBarProps> = ({ cartCount }) => (
         </Link>
       </li>
       <li>
-        <Link to="/cart" tabIndex={0} className="group">
+        <Link to="/cart" tabIndex={0} className="group relative">
           <Paragraph text="Cart" variant="small" as="span" className="font-medium text-[#64748B] px-2 py-1 rounded transition-colors duration-150 group-hover:underline group-hover:text-[#0D9488] focus:outline-none focus:ring-2 focus:ring-[#0D9488]" />
+          {cartCount && cartCount > 0 && (
+            <span className="absolute -top-2 -right-3 bg-[#0D9488] text-white text-xs font-bold rounded-full px-2 py-0.5 shadow">{cartCount}</span>
+          )}
         </Link>
       </li>
     </ul>
-    <div className="md:hidden">
-      <Button text="Menu" variant="primary" size="md" className="px-3 py-1 bg-teal-600 text-white" />
-    </div>
+  {/* Mobile menu button removed as Button is not used */}
   </nav>
 );
 
