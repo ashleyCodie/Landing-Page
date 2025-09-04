@@ -3,32 +3,7 @@ import React from "react";
 
 function App() {
   // Example items for the shop
-  const items = [
-    {
-      name: "Eco Water Bottle",
-      price: 19.99,
-      image: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80",
-      description: "Stay hydrated with this eco-friendly water bottle. Durable, stylish, and perfect for everyday use.",
-    },
-    {
-      name: "Smart LED Bulb",
-      price: 12.49,
-      image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80",
-      description: "Control your lighting from anywhere. Energy efficient and customizable colors.",
-    },
-    {
-      name: "Wireless Headphones",
-      price: 59.99,
-      image: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80",
-      description: "Enjoy high-quality sound with noise cancellation and long battery life.",
-    },
-    {
-      name: "Portable Charger",
-      price: 24.99,
-      image: "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=400&q=80",
-      description: "Charge your devices on the go. Compact, fast, and reliable.",
-    },
-  ];
+  const items: Array<{ name: string; price: number; image: string; description: string }> = [];
 
   return (
     <main className="flex flex-col items-center min-h-screen p-6 bg-gray-50">
