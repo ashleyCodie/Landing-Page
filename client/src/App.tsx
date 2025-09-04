@@ -7,7 +7,7 @@ function App() {
       <h1 className="text-3xl font-bold mb-8 text-green-700">Shop Our Products</h1>
       <div className="w-full">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-          {(items as Item[]).map((item: Item, idx: number) => (
+          {items.map((item: Item, idx: number) => (
             <div key={idx} className="rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 cursor-pointer overflow-hidden flex flex-col h-full">
               <img
                 src={item.image}
