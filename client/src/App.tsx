@@ -1,5 +1,6 @@
 import items from "./items";
 import type { Item } from "./items";
+import Heading from "./components/reusable/Heading"
 
 function App() {
   return (
@@ -33,6 +34,12 @@ function App() {
           ))}
         </div>
       </div>
+              <Heading text="Heading Level 1" level={1} />
+              <Heading text="Heading Level 2" level={2} />
+              <Heading text="Heading Level 3" level={3} />
+              <Heading text="Heading Level 4" level={4} />
+              <Heading text="Heading Level 5" level={5} />
+              <Heading text="Heading Level 6" level={6} />
     </main>
   );
 }
