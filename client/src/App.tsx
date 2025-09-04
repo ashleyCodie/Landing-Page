@@ -1,50 +1,67 @@
-import items from "./items";
-import type { Item } from "./items";
-import Heading from "./components/reusable/Heading"
-import Footer from "./components/reusable/Footer"
 
-function App() {
+
+import React, { useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Products from "./pages/Products";
+import Contact from "./pages/Contact";
+import Cart from "./pages/Cart";
+import type { CartItemType } from "./pages/Cart";
+import type { ProductsProps } from "./pages/Products";
+import type { CartProps } from "./pages/Cart";
+import NavBar from "./sections/NavBar";
+
+
+
+
+const App: React.FC = () => {
+  const [cart, setCart] = useState<CartItemType[]>([]);
+  const [confirmation, setConfirmation] = useState("");
+
+  function addToCart(itemName: string, color: string = "", price: string = "") {
+    setCart((prev) => {
+      const idx = prev.findIndex(
+        (item) => item.name === itemName && item.color === color && item.price === price
+      );
+      if (idx !== -1) {
+        // If item exists, increment quantity
+        return prev.map((item, i) =>
+          i === idx ? { ...item, quantity: item.quantity + 1 } : item
+        );
+      } else {
+        // Add new item
+        return [...prev, { name: itemName, color, price, quantity: 1 }];
+      }
+    });
+    setConfirmation(`${itemName}${color ? ` (${color})` : ""} added to cart!`);
+    setTimeout(() => setConfirmation(""), 2000);
+  }
+
+  function updateCartQuantity(idx: number, quantity: number) {
+    setCart((prev) =>
+      prev.map((item, i) => (i === idx ? { ...item, quantity } : item))
+    );
+  }
+
+  function deleteCartItem(idx: number) {
+    setCart((prev) => prev.filter((_, i) => i !== idx));
+  }
+
   return (
-    <main className="flex flex-col items-center min-h-screen p-6 bg-gray-50">
-    
-      <h1 className="text-3xl font-bold mb-8 text-green-700">Shop Our Products</h1>
-      <div className="w-full">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-          {items.map((item: Item, idx: number) => (
-            <div key={idx} className="rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 cursor-pointer overflow-hidden flex flex-col h-full">
-              <img
-                src={item.image}
-                alt={item.name}
-                className="w-full h-48 object-cover"
-              />
-              <div className="px-4 pt-4 flex flex-row justify-between items-center">
-                <h3 className="text-lg font-semibold text-gray-800">{item.name}</h3>
-                <span className="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-bold shadow">${item.price.toFixed(2)}</span>
-              </div>
-              <div className="px-4 pt-2 pb-4 flex-1">
-                <p className="text-gray-600 text-sm">{item.description}</p>
-              </div>
-              <div className="px-4 pb-4 mt-auto">
-                <button
-                  className="w-full rounded-lg bg-green-500 text-white py-2 font-semibold shadow hover:bg-green-600 transition-colors"
-                  onClick={() => alert(`Added ${item.name} to cart!`)}
-                >
-                  Add to Cart
-                </button>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-              <Heading text="Heading Level 1" level={1} />
-              <Heading text="Heading Level 2" level={2} />
-              <Heading text="Heading Level 3" level={3} />
-              <Heading text="Heading Level 4" level={4} />
-              <Heading text="Heading Level 5" level={5} />
-              <Heading text="Heading Level 6" level={6} />
-              <Footer />
-    </main>
+    <Router>
+      <NavBar cartCount={cart.reduce((sum, item) => sum + item.quantity, 0)} />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/products" element={<ProductsWrapper addToCart={addToCart} cart={cart} confirmation={confirmation} />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/cart" element={<CartWrapper cart={cart} onUpdateQuantity={updateCartQuantity} onDelete={deleteCartItem} />} />
+      </Routes>
+    </Router>
   );
-}
+};
+
+// Wrappers to pass props to routed components
+const ProductsWrapper = (props: ProductsProps) => <Products {...props} />;
+const CartWrapper = (props: CartProps) => <Cart {...props} />;
 
 export default App;

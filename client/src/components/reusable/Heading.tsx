@@ -1,53 +1,26 @@
-import React from 'react';
+
+
+import React from "react";
+
 
 interface HeadingProps {
-  text: string;
-  level: 1 | 2 | 3 | 4 | 5 | 6;
-  className?: string;
-  id?: string;
-  [key: string]: any; // For additional HTML attributes
+	text: string;
+	level?: 1 | 2 | 3 | 4 | 5 | 6;
+	className?: string;
 }
 
-const Heading: React.FC<HeadingProps> = ({ 
-  text, 
-  level, 
-  className = '', 
-  ...props 
-}) => {
-  // Default styles for each heading level (can be overridden with className)
-  const getDefaultStyles = (level: number): string => {
-    const styles = {
-      1: 'text-4xl font-bold text-gray-900 mb-6',
-      2: 'text-3xl font-bold text-gray-900 mb-5',
-      3: 'text-2xl font-semibold text-gray-900 mb-4',
-      4: 'text-xl font-semibold text-gray-900 mb-3',
-      5: 'text-lg font-medium text-gray-900 mb-2',
-      6: 'text-base font-medium text-gray-900 mb-2'
-    };
-    
-    return styles[level as keyof typeof styles] || styles[1];
-  };
-  
-  const defaultStyles = getDefaultStyles(level);
-  const finalClasses = className ? `${defaultStyles} ${className}` : defaultStyles;
-  
-  // Use a switch statement to return the correct JSX element
-  switch (level) {
-    case 1:
-      return <h1 className={finalClasses} {...props}>{text}</h1>;
-    case 2:
-      return <h2 className={finalClasses} {...props}>{text}</h2>;
-    case 3:
-      return <h3 className={finalClasses} {...props}>{text}</h3>;
-    case 4:
-      return <h4 className={finalClasses} {...props}>{text}</h4>;
-    case 5:
-      return <h5 className={finalClasses} {...props}>{text}</h5>;
-    case 6:
-      return <h6 className={finalClasses} {...props}>{text}</h6>;
-    default:
-      return <h1 className={finalClasses} {...props}>{text}</h1>;
-  }
+const sizes = {
+	1: "font-inter font-bold text-[#1E293B] leading-[1.1] text-[48px] md:text-[32px]",
+	2: "font-inter font-bold text-[#1E293B] leading-[1.2] text-[36px] md:text-[28px]",
+	3: "font-inter font-semibold text-[#1E293B] leading-[1.3] text-[24px] md:text-[20px]",
+	4: "font-inter font-semibold text-[#1E293B] leading-[1.4] text-[20px] md:text-[18px]",
+	5: "font-inter font-medium text-[#1E293B] leading-[1.5] text-[16px] md:text-[15px]",
+	6: "font-inter font-medium text-[#1E293B] leading-[1.6] text-[14px] md:text-[13px]",
+};
+
+const Heading: React.FC<HeadingProps> = ({ text, level = 1, className = "" }) => {
+	const Tag = `h${level}` as React.ElementType;
+	return React.createElement(Tag, { className: `${sizes[level] || sizes[1]} ${className}` }, text);
 };
 
 export default Heading;
