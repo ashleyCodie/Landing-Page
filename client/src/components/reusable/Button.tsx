@@ -16,8 +16,9 @@ const Button: React.FC<ButtonProps> = ({
 
   // Define what each variant means
   const variantStyles = {
-    primary: "bg-seagreen text-white hover:bg-green-700 border border-seagreen text-seagreen hover:bg-seagreen hover:text-white",
-    secondary: "bg-green-500 text-white hover:bg-green-700 border border-seagreen text-seagreen hover:bg-seagreen hover:text-white",
+    // Use Tailwind's closest sea green: bg-green-500, or customize with a hex code if needed
+    primary: "bg-green-500 text-white hover:bg-green-600 border border-green-500",
+    secondary: "bg-green-400 text-white hover:bg-green-500 border border-green-400",
   };
 
   // Base styles that apply to all buttons
