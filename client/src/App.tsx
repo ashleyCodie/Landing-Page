@@ -1,9 +1,12 @@
 import items from "./items";
 import type { Item } from "./items";
+import Heading from "./components/reusable/Heading"
+
 
 function App() {
   return (
     <main className="flex flex-col items-center min-h-screen p-6 bg-gray-50">
+    
       <h1 className="text-3xl font-bold mb-8 text-green-700">Shop Our Products</h1>
       <div className="w-full">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
@@ -33,6 +36,12 @@ function App() {
           ))}
         </div>
       </div>
+              <Heading text="Heading Level 1" level={1} />
+              <Heading text="Heading Level 2" level={2} />
+              <Heading text="Heading Level 3" level={3} />
+              <Heading text="Heading Level 4" level={4} />
+              <Heading text="Heading Level 5" level={5} />
+              <Heading text="Heading Level 6" level={6} />
     </main>
   );
 }
