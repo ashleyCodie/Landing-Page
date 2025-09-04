@@ -1,6 +1,6 @@
 // src/App.tsx
 // ...existing code...
-import Card from "./components/reusable/Card";
+// No reusable imports
 
 
 
@@ -42,19 +42,32 @@ function App() {
       <div className="w-full mt-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {cards.map((card, idx) => (
-            <Card
-              key={idx}
-              title={card.title}
-              itemName={card.itemName}
-              price={card.price}
-              image={card.image}
-              description={card.description}
-              onAddToCart={() => alert(`Added ${card.itemName} to cart!`)}
-            />
+            <div key={idx} className="rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 cursor-pointer overflow-hidden flex flex-col h-full">
+              <img
+                src={card.image}
+                alt={card.title}
+                className="w-full h-48 object-cover"
+              />
+              <div className="px-4 pt-4 flex flex-row justify-between items-center">
+                <h3 className="text-lg font-semibold">{card.itemName}</h3>
+                <span className="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-bold shadow">${typeof card.price === "number" ? card.price.toFixed(2) : card.price}</span>
+              </div>
+              <div className="px-4 pt-2 pb-4 flex-1">
+                <p className="text-gray-600">{card.description}</p>
+              </div>
+              <div className="px-4 pb-4 mt-auto">
+                <button
+                  className="w-full rounded-lg bg-green-500 text-white py-2 font-semibold shadow hover:bg-green-600 transition-colors"
+                  onClick={() => alert(`Added ${card.itemName} to cart!`)}
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
           ))}
         </div>
       </div>
-    </main>
+  </main>
   );
 }
 
