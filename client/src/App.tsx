@@ -2,7 +2,6 @@ import items from "./items";
 import type { Item } from "./items";
 import Heading from "./components/reusable/Heading"
 
-
 function App() {
   return (
     <main className="flex flex-col items-center min-h-screen p-6 bg-gray-50">
