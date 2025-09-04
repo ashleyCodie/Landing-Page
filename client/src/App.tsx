@@ -1,16 +1,8 @@
 
 import React from "react";
+import items from "./items";
 
 function App() {
-  // Example items for the shop
-  const items = [
-    {
-      name: "Wireless Headphones",
-      price: 59.99,
-      image: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80",
-      description: "Enjoy high-quality sound with noise cancellation and long battery life.",
-    },
-  ];
 
   return (
     <main className="flex flex-col items-center min-h-screen p-6 bg-gray-50">
