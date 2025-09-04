@@ -1,6 +1,7 @@
 import items from "./items";
 import type { Item } from "./items";
 import Heading from "./components/reusable/Heading"
+import Footer from "./components/reusable/Footer"
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
               <Heading text="Heading Level 4" level={4} />
               <Heading text="Heading Level 5" level={5} />
               <Heading text="Heading Level 6" level={6} />
+              <Footer />
     </main>
   );
 }
