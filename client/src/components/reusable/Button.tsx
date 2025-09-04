@@ -16,8 +16,8 @@ const Button: React.FC<ButtonProps> = ({
 
   // Define what each variant means
   const variantStyles = {
-    primary: "bg-seagreen text-white hover:bg-green-700",
-    secondary: "border border-seagreen text-seagreen hover:bg-seagreen hover:text-white",
+    primary: "bg-seagreen text-white hover:bg-green-700 border border-seagreen text-seagreen hover:bg-seagreen hover:text-white",
+    secondary: "bg-green-500 text-white hover:bg-green-700 border border-seagreen text-seagreen hover:bg-seagreen hover:text-white",
   };
 
   // Base styles that apply to all buttons

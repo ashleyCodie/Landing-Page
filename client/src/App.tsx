@@ -12,10 +12,10 @@ function App() {
 
       <div className="mt-6">
         <Button
-          text="Click Me"
+          text="Add To Cart"
           onClick={() => alert("Button clicked!")}
           variant="primary"
-          className="px-4 py-2 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700"
+          className="px-4 py-2 pl-15 pe-15 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700"
         />
       </div>
     </main>
