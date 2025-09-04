@@ -18,8 +18,22 @@ function App() {
           {items.map((item: Item, idx: number) => {
             const selectedColor = selectedColors[idx] || (item.colorOptions ? item.colorOptions[0] : undefined);
             const imageSrc = selectedColor && item.colorImages && item.colorImages[selectedColor] ? item.colorImages[selectedColor] : item.image;
+            // Card styling for maintainability and interactive feedback
+            const cardClass = [
+              "rounded-xl", // more pronounced rounded corners
+              "bg-white",
+              "shadow-md",
+              "hover:shadow-2xl",
+              "hover:-translate-y-1",
+              "transition-all",
+              "duration-300",
+              "cursor-pointer",
+              "overflow-hidden",
+              "flex flex-col h-full",
+              "border border-gray-100 hover:border-green-400"
+            ].join(" ");
             return (
-              <div key={idx} className="rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 cursor-pointer overflow-hidden flex flex-col h-full">
+              <div key={idx} className={cardClass}>
                 <img
                   src={imageSrc}
                   alt={item.name}
