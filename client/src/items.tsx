@@ -1,24 +1,434 @@
+
 export type Item = {
+  id: number;
   name: string;
-  price: number;
+  price: string;
   image: string;
   description: string;
-  colorOptions?: string[];
-  colorImages?: { [color: string]: string };
+  colorOptions: { color: string; image: string }[];
 };
+
 
 const items: Item[] = [
   {
-    name: "Running Shoes",
-    price: 129.99,
-    image: "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=400&q=80", // default image
-    description: "Lightweight running shoes with enhanced cushioning for maximum comfort.",
-    colorOptions: ["Red", "White", "Blue"],
-    colorImages: {
-      Red: "https://images.unsplash.com/photo-1515548212735-6c2e1e8b8b43?auto=format&fit=crop&w=400&q=80", // Red running shoes
-      White: "https://images.unsplash.com/photo-1528701800484-905909a1e8e0?auto=format&fit=crop&w=400&q=80", // White running shoes
-      Blue: "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=400&q=80", // Blue running shoes
-    },
+    id: 31,
+    name: "Tiny Runner (Children)",
+    price: "$49.99",
+    description: "Lightweight running shoe for kids, designed for comfort and play.",
+    image: "/images/shoe-tiny-runner.jpg",
+    colorOptions: [
+      { color: "Blue", image: "/images/shoe-tiny-blue.jpg" },
+      { color: "Pink", image: "/images/shoe-tiny-pink.jpg" },
+      { color: "Green", image: "/images/shoe-tiny-green.jpg" },
+    ],
+  },
+  {
+    id: 32,
+    name: "Mini Mesh (Children)",
+    price: "$44.99",
+    description: "Breathable mesh shoe for children, perfect for active days and playground fun.",
+    image: "/images/shoe-mini-mesh.jpg",
+    colorOptions: [
+      { color: "Yellow", image: "/images/shoe-mini-yellow.jpg" },
+      { color: "Purple", image: "/images/shoe-mini-purple.jpg" },
+      { color: "Aqua", image: "/images/shoe-mini-aqua.jpg" },
+    ],
+  },
+  {
+    id: 33,
+    name: "Kid's Court Classic (Children)",
+    price: "$54.99",
+    description: "Children's tennis shoe for court performance and style.",
+    image: "/images/shoe-kids-court.jpg",
+    colorOptions: [
+      { color: "White", image: "/images/shoe-kids-white.jpg" },
+      { color: "Red", image: "/images/shoe-kids-red.jpg" },
+      { color: "Blue", image: "/images/shoe-kids-blue.jpg" },
+    ],
+  },
+  {
+    id: 34,
+    name: "Playground Pro (Children)",
+    price: "$39.99",
+    description: "Durable shoe for kids, built for playground adventures and everyday wear.",
+    image: "/images/shoe-playground-pro.jpg",
+    colorOptions: [
+      { color: "Orange", image: "/images/shoe-playground-orange.jpg" },
+      { color: "Green", image: "/images/shoe-playground-green.jpg" },
+      { color: "Blue", image: "/images/shoe-playground-blue.jpg" },
+    ],
+  },
+  {
+    id: 35,
+    name: "Slip-On Star (Children)",
+    price: "$42.99",
+    description: "Easy slip-on shoe for kids, with star patterns and comfy fit.",
+    image: "/images/shoe-slipon-star.jpg",
+    colorOptions: [
+      { color: "Pink", image: "/images/shoe-slipon-pink.jpg" },
+      { color: "Blue", image: "/images/shoe-slipon-blue.jpg" },
+      { color: "Yellow", image: "/images/shoe-slipon-yellow.jpg" },
+    ],
+  },
+  {
+    id: 1,
+    name: "Velocity Runner (Men)",
+    price: "$89.99",
+    description: "Lightweight men's running shoe engineered for speed and comfort. Perfect for daily training and races.",
+    image: "/images/shoe-velocity-men.jpg",
+    colorOptions: [
+      { color: "Black", image: "/images/shoe-velocity-black.jpg" },
+      { color: "White", image: "/images/shoe-velocity-white.jpg" },
+      { color: "Blue", image: "/images/shoe-velocity-blue.jpg" },
+    ],
+  },
+  {
+    id: 2,
+    name: "Velocity Runner (Women)",
+    price: "$89.99",
+    description: "Lightweight women's running shoe engineered for speed and comfort. Perfect for daily training and races.",
+    image: "/images/shoe-velocity-women.jpg",
+    colorOptions: [
+      { color: "Pink", image: "/images/shoe-velocity-pink.jpg" },
+      { color: "White", image: "/images/shoe-velocity-white.jpg" },
+      { color: "Blue", image: "/images/shoe-velocity-blue.jpg" },
+    ],
+  },
+  {
+    id: 3,
+    name: "Trail Blazer (Men)",
+    price: "$109.99",
+    description: "Durable men's trail shoe with reinforced grip and breathable mesh. Conquer any terrain with confidence.",
+    image: "/images/shoe-trail-men.jpg",
+    colorOptions: [
+      { color: "Green", image: "/images/shoe-trail-green.jpg" },
+      { color: "Gray", image: "/images/shoe-trail-gray.jpg" },
+      { color: "Orange", image: "/images/shoe-trail-orange.jpg" },
+    ],
+  },
+  {
+    id: 4,
+    name: "Trail Blazer (Women)",
+    price: "$109.99",
+    description: "Durable women's trail shoe with reinforced grip and breathable mesh. Conquer any terrain with confidence.",
+    image: "/images/shoe-trail-women.jpg",
+    colorOptions: [
+      { color: "Purple", image: "/images/shoe-trail-purple.jpg" },
+      { color: "Gray", image: "/images/shoe-trail-gray.jpg" },
+      { color: "Orange", image: "/images/shoe-trail-orange.jpg" },
+    ],
+  },
+  {
+    id: 5,
+    name: "Urban Flex (Men)",
+    price: "$99.99",
+    description: "Versatile men's sneaker for city life. Responsive cushioning and stylish design for all-day comfort.",
+    image: "/images/shoe-urban-men.jpg",
+    colorOptions: [
+      { color: "Red", image: "/images/shoe-urban-red.jpg" },
+      { color: "White", image: "/images/shoe-urban-white.jpg" },
+      { color: "Navy", image: "/images/shoe-urban-navy.jpg" },
+    ],
+  },
+  {
+    id: 6,
+    name: "Urban Flex (Women)",
+    price: "$99.99",
+    description: "Versatile women's sneaker for city life. Responsive cushioning and stylish design for all-day comfort.",
+    image: "/images/shoe-urban-women.jpg",
+    colorOptions: [
+      { color: "Pink", image: "/images/shoe-urban-pink.jpg" },
+      { color: "White", image: "/images/shoe-urban-white.jpg" },
+      { color: "Navy", image: "/images/shoe-urban-navy.jpg" },
+    ],
+  },
+  {
+    id: 7,
+    name: "Cushion Pro (Men)",
+    price: "$119.99",
+    description: "Maximum comfort men's shoe with advanced sole technology. Ideal for long walks and standing all day.",
+    image: "/images/shoe-cushion-men.jpg",
+    colorOptions: [
+      { color: "Gray", image: "/images/shoe-cushion-gray.jpg" },
+      { color: "Blue", image: "/images/shoe-cushion-blue.jpg" },
+      { color: "Black", image: "/images/shoe-cushion-black.jpg" },
+    ],
+  },
+  {
+    id: 8,
+    name: "Cushion Pro (Women)",
+    price: "$119.99",
+    description: "Maximum comfort women's shoe with advanced sole technology. Ideal for long walks and standing all day.",
+    image: "/images/shoe-cushion-women.jpg",
+    colorOptions: [
+      { color: "Gray", image: "/images/shoe-cushion-gray.jpg" },
+      { color: "Blue", image: "/images/shoe-cushion-blue.jpg" },
+      { color: "Pink", image: "/images/shoe-cushion-pink.jpg" },
+    ],
+  },
+  {
+    id: 9,
+    name: "Breeze Mesh (Men)",
+    price: "$89.99",
+    description: "Ultra-breathable mesh men's shoe to keep your feet cool and dry. Lightweight and flexible for active days.",
+    image: "/images/shoe-breeze-men.jpg",
+    colorOptions: [
+      { color: "White", image: "/images/shoe-breeze-white.jpg" },
+      { color: "Teal", image: "/images/shoe-breeze-teal.jpg" },
+      { color: "Gray", image: "/images/shoe-breeze-gray.jpg" },
+    ],
+  },
+  {
+    id: 10,
+    name: "Breeze Mesh (Women)",
+    price: "$89.99",
+    description: "Ultra-breathable mesh women's shoe to keep your feet cool and dry. Lightweight and flexible for active days.",
+    image: "/images/shoe-breeze-women.jpg",
+    colorOptions: [
+      { color: "White", image: "/images/shoe-breeze-white.jpg" },
+      { color: "Teal", image: "/images/shoe-breeze-teal.jpg" },
+      { color: "Gray", image: "/images/shoe-breeze-gray.jpg" },
+    ],
+  },
+  {
+    id: 11,
+    name: "Sprint Elite (Men)",
+    price: "$129.99",
+    description: "Elite men's sprint shoe for track and field. Lightweight and aerodynamic design.",
+    image: "/images/shoe-sprint-men.jpg",
+    colorOptions: [
+      { color: "Yellow", image: "/images/shoe-sprint-yellow.jpg" },
+      { color: "Black", image: "/images/shoe-sprint-black.jpg" },
+      { color: "White", image: "/images/shoe-sprint-white.jpg" },
+    ],
+  },
+  {
+    id: 12,
+    name: "Sprint Elite (Women)",
+    price: "$129.99",
+    description: "Elite women's sprint shoe for track and field. Lightweight and aerodynamic design.",
+    image: "/images/shoe-sprint-women.jpg",
+    colorOptions: [
+      { color: "Yellow", image: "/images/shoe-sprint-yellow.jpg" },
+      { color: "Pink", image: "/images/shoe-sprint-pink.jpg" },
+      { color: "White", image: "/images/shoe-sprint-white.jpg" },
+    ],
+  },
+  {
+    id: 13,
+    name: "Marathon Max (Men)",
+    price: "$139.99",
+    description: "Men's marathon shoe with extra cushioning for long-distance comfort.",
+    image: "/images/shoe-marathon-men.jpg",
+    colorOptions: [
+      { color: "Blue", image: "/images/shoe-marathon-blue.jpg" },
+      { color: "Gray", image: "/images/shoe-marathon-gray.jpg" },
+      { color: "Black", image: "/images/shoe-marathon-black.jpg" },
+    ],
+  },
+  {
+    id: 14,
+    name: "Marathon Max (Women)",
+    price: "$139.99",
+    description: "Women's marathon shoe with extra cushioning for long-distance comfort.",
+    image: "/images/shoe-marathon-women.jpg",
+    colorOptions: [
+      { color: "Blue", image: "/images/shoe-marathon-blue.jpg" },
+      { color: "Gray", image: "/images/shoe-marathon-gray.jpg" },
+      { color: "Pink", image: "/images/shoe-marathon-pink.jpg" },
+    ],
+  },
+  {
+    id: 15,
+    name: "Street Style (Men)",
+    price: "$79.99",
+    description: "Men's street sneaker with bold colors and urban flair.",
+    image: "/images/shoe-street-men.jpg",
+    colorOptions: [
+      { color: "Red", image: "/images/shoe-street-red.jpg" },
+      { color: "Black", image: "/images/shoe-street-black.jpg" },
+      { color: "White", image: "/images/shoe-street-white.jpg" },
+    ],
+  },
+  {
+    id: 16,
+    name: "Street Style (Women)",
+    price: "$79.99",
+    description: "Women's street sneaker with bold colors and urban flair.",
+    image: "/images/shoe-street-women.jpg",
+    colorOptions: [
+      { color: "Pink", image: "/images/shoe-street-pink.jpg" },
+      { color: "Black", image: "/images/shoe-street-black.jpg" },
+      { color: "White", image: "/images/shoe-street-white.jpg" },
+    ],
+  },
+  {
+    id: 17,
+    name: "Active Trainer (Men)",
+    price: "$89.99",
+    description: "Men's training shoe for gym and cross-training. Supportive and flexible.",
+    image: "/images/shoe-trainer-men.jpg",
+    colorOptions: [
+      { color: "Blue", image: "/images/shoe-trainer-blue.jpg" },
+      { color: "Black", image: "/images/shoe-trainer-black.jpg" },
+      { color: "White", image: "/images/shoe-trainer-white.jpg" },
+    ],
+  },
+  {
+    id: 18,
+    name: "Active Trainer (Women)",
+    price: "$89.99",
+    description: "Women's training shoe for gym and cross-training. Supportive and flexible.",
+    image: "/images/shoe-trainer-women.jpg",
+    colorOptions: [
+      { color: "Purple", image: "/images/shoe-trainer-purple.jpg" },
+      { color: "Black", image: "/images/shoe-trainer-black.jpg" },
+      { color: "White", image: "/images/shoe-trainer-white.jpg" },
+    ],
+  },
+  {
+    id: 19,
+    name: "Classic Leather (Men)",
+    price: "$99.99",
+    description: "Men's classic leather shoe for timeless style and comfort.",
+    image: "/images/shoe-leather-men.jpg",
+    colorOptions: [
+      { color: "Brown", image: "/images/shoe-leather-brown.jpg" },
+      { color: "Black", image: "/images/shoe-leather-black.jpg" },
+      { color: "White", image: "/images/shoe-leather-white.jpg" },
+    ],
+  },
+  {
+    id: 20,
+    name: "Classic Leather (Women)",
+    price: "$99.99",
+    description: "Women's classic leather shoe for timeless style and comfort.",
+    image: "/images/shoe-leather-women.jpg",
+    colorOptions: [
+      { color: "Brown", image: "/images/shoe-leather-brown.jpg" },
+      { color: "Black", image: "/images/shoe-leather-black.jpg" },
+      { color: "White", image: "/images/shoe-leather-white.jpg" },
+    ],
+  },
+  {
+    id: 21,
+    name: "Flex Runner (Men)",
+    price: "$89.99",
+    description: "Men's flexible running shoe for natural movement and comfort.",
+    image: "/images/shoe-flex-men.jpg",
+    colorOptions: [
+      { color: "Blue", image: "/images/shoe-flex-blue.jpg" },
+      { color: "Black", image: "/images/shoe-flex-black.jpg" },
+      { color: "White", image: "/images/shoe-flex-white.jpg" },
+    ],
+  },
+  {
+    id: 22,
+    name: "Flex Runner (Women)",
+    price: "$89.99",
+    description: "Women's flexible running shoe for natural movement and comfort.",
+    image: "/images/shoe-flex-women.jpg",
+    colorOptions: [
+      { color: "Pink", image: "/images/shoe-flex-pink.jpg" },
+      { color: "Black", image: "/images/shoe-flex-black.jpg" },
+      { color: "White", image: "/images/shoe-flex-white.jpg" },
+    ],
+  },
+  {
+    id: 23,
+    name: "Power Lift (Men)",
+    price: "$119.99",
+    description: "Men's powerlifting shoe for stability and support during heavy lifts.",
+    image: "/images/shoe-power-men.jpg",
+    colorOptions: [
+      { color: "Red", image: "/images/shoe-power-red.jpg" },
+      { color: "Black", image: "/images/shoe-power-black.jpg" },
+      { color: "White", image: "/images/shoe-power-white.jpg" },
+    ],
+  },
+  {
+    id: 24,
+    name: "Power Lift (Women)",
+    price: "$119.99",
+    description: "Women's powerlifting shoe for stability and support during heavy lifts.",
+    image: "/images/shoe-power-women.jpg",
+    colorOptions: [
+      { color: "Purple", image: "/images/shoe-power-purple.jpg" },
+      { color: "Black", image: "/images/shoe-power-black.jpg" },
+      { color: "White", image: "/images/shoe-power-white.jpg" },
+    ],
+  },
+  {
+    id: 25,
+    name: "Court Classic (Men)",
+    price: "$89.99",
+    description: "Men's tennis shoe for court performance and style.",
+    image: "/images/shoe-court-men.jpg",
+    colorOptions: [
+      { color: "White", image: "/images/shoe-court-white.jpg" },
+      { color: "Blue", image: "/images/shoe-court-blue.jpg" },
+      { color: "Black", image: "/images/shoe-court-black.jpg" },
+    ],
+  },
+  {
+    id: 26,
+    name: "Court Classic (Women)",
+    price: "$89.99",
+    description: "Women's tennis shoe for court performance and style.",
+    image: "/images/shoe-court-women.jpg",
+    colorOptions: [
+      { color: "White", image: "/images/shoe-court-white.jpg" },
+      { color: "Pink", image: "/images/shoe-court-pink.jpg" },
+      { color: "Black", image: "/images/shoe-court-black.jpg" },
+    ],
+  },
+  {
+    id: 27,
+    name: "All-Terrain (Men)",
+    price: "$109.99",
+    description: "Men's all-terrain shoe for hiking and outdoor adventures.",
+    image: "/images/shoe-terrain-men.jpg",
+    colorOptions: [
+      { color: "Brown", image: "/images/shoe-terrain-brown.jpg" },
+      { color: "Green", image: "/images/shoe-terrain-green.jpg" },
+      { color: "Black", image: "/images/shoe-terrain-black.jpg" },
+    ],
+  },
+  {
+    id: 28,
+    name: "All-Terrain (Women)",
+    price: "$109.99",
+    description: "Women's all-terrain shoe for hiking and outdoor adventures.",
+    image: "/images/shoe-terrain-women.jpg",
+    colorOptions: [
+      { color: "Brown", image: "/images/shoe-terrain-brown.jpg" },
+      { color: "Purple", image: "/images/shoe-terrain-purple.jpg" },
+      { color: "Black", image: "/images/shoe-terrain-black.jpg" },
+    ],
+  },
+  {
+    id: 29,
+    name: "Slip-On Comfort (Men)",
+    price: "$69.99",
+    description: "Men's slip-on shoe for easy wear and all-day comfort.",
+    image: "/images/shoe-slipon-men.jpg",
+    colorOptions: [
+      { color: "Gray", image: "/images/shoe-slipon-gray.jpg" },
+      { color: "Black", image: "/images/shoe-slipon-black.jpg" },
+      { color: "Navy", image: "/images/shoe-slipon-navy.jpg" },
+    ],
+  },
+  {
+    id: 30,
+    name: "Slip-On Comfort (Women)",
+    price: "$69.99",
+    description: "Women's slip-on shoe for easy wear and all-day comfort.",
+    image: "/images/shoe-slipon-women.jpg",
+    colorOptions: [
+      { color: "Gray", image: "/images/shoe-slipon-gray.jpg" },
+      { color: "Pink", image: "/images/shoe-slipon-pink.jpg" },
+      { color: "Navy", image: "/images/shoe-slipon-navy.jpg" },
+    ],
   },
 ];
 
