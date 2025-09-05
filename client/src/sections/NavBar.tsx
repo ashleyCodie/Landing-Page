@@ -1,8 +1,8 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
-import Heading from "../components/reusable/Heading";
-import Paragraph from "../components/reusable/paragraph";
+import Heading from "../components/ui/Heading";
+import Paragraph from "../components/ui/paragraph";
 
 
 export interface NavBarProps {

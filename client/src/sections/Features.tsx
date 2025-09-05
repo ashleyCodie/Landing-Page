@@ -1,8 +1,8 @@
 
 
 import React from "react";
-import Heading from "../components/reusable/Heading";
-import Card from "../components/reusable/Card";
+import Heading from "../components/ui/Heading";
+import Card from "../components/ui/Card";
 
 const features = [
   {

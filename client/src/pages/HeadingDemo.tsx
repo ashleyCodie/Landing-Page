@@ -1,5 +1,5 @@
 import React from "react";
-import Heading from "../components/reusable/Heading";
+import Heading from "../components/ui/Heading";
 
 const HeadingDemo: React.FC = () => (
   <div className="space-y-4 p-8">
