@@ -1,32 +1,89 @@
 
-import React from "react";
-import Heading from "../components/reusable/Heading";
-import Paragraph from "../components/reusable/paragraph";
+import React from 'react';
 
+interface FooterProps {
+  companyName?: string;
+  companyUrl?: string;
+  year?: number;
+  mainLinks?: Array<{
+    label: string;
+    href: string;
+  }>;
+  legalLinks?: Array<{
+    label: string;
+    href: string;
+  }>;
+}
 
-const Footer: React.FC = () => (
+const Footer: React.FC<FooterProps> = ({
+  companyName = "ShoeStyle",
+  companyUrl = "/",
+  year = 2025,
+  mainLinks = [
+    { label: "About", href: "/about" },
+    { label: "Products", href: "/products" },
+    { label: "Contact", href: "/contact" },
+    { label: "Support", href: "/support" }
+  ],
+  legalLinks = [
+    { label: "Privacy", href: "/privacy" },
+    { label: "Terms", href: "/terms" }
+  ]
+}) => {
+  return (
+    <footer className="bg-gray-50 border-t border-gray-200">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {/* Top section with brand and main links */}
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
+         
+          <div className="mb-4 md:mb-0">
+            <a 
+              href={companyUrl} 
+              className="text-xl font-bold text-gray-900 hover:text-gray-700"
+            >
+              {companyName}
+            </a>
+          </div>
 
-  <footer className="w-full bg-[#F8FAFC] py-8 mt-12">
-    <div className="max-w-5xl mx-auto flex flex-row items-center justify-between px-6">
-      {/* Logo/brand stacked vertically (hamburger style) */}
-      <div className="flex flex-col items-center gap-2 min-w-[180px]">
-        <img src="/assets/logo.svg" alt="ShoeStyle Logo" className="h-10 w-10 mb-2" />
-        <Heading text="ShoeStyle Athletics" level={4} className="font-medium text-[#64748B]" />
+          
+          <nav className="flex flex-wrap gap-8">
+            {mainLinks.map((link, index) => (
+              <a
+                key={index}
+                href={link.href}
+                className="text-gray-600 hover:text-gray-900 text-sm font-medium transition-colors duration-200"
+              >
+                {link.label}
+              </a>
+            ))}
+          </nav>
+        </div>
+
+        
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center pt-4 border-t border-gray-200">
+    
+          <div className="mb-4 md:mb-0">
+            <span className="text-sm text-gray-500">
+              © {year} {companyName}. All rights reserved.
+            </span>
+          </div>
+
+        
+          <div className="flex gap-6">
+            {legalLinks.map((link, index) => (
+              <a
+                key={index}
+                href={link.href}
+                className="text-sm text-gray-500 hover:text-gray-700 transition-colors duration-200"
+              >
+                {link.label}
+              </a>
+            ))}
+          </div>
+        </div>
       </div>
-      {/* Quick links stacked vertically (hamburger style) */}
-      <div className="flex flex-col items-center gap-2 mx-auto">
-        <a href="/products" className="font-medium text-[15px] text-[#0D9488] hover:underline">Products</a>
-        <a href="/contact" className="font-medium text-[15px] text-[#0D9488] hover:underline">Contact</a>
-        <a href="/cart" className="font-medium text-[15px] text-[#0D9488] hover:underline">Cart</a>
-      </div>
-      {/* Privacy/Terms flush right */}
-      <div className="flex flex-col items-end gap-2 min-w-[180px]">
-        <a href="/privacy" className="font-medium text-[14px] text-[#64748B] hover:underline">Privacy Policy</a>
-        <a href="/terms" className="font-medium text-[14px] text-[#64748B] hover:underline">Terms of Service</a>
-        <Paragraph text={`© ${new Date().getFullYear()} ShoeStyle Athletics. All rights reserved.`} variant="caption" as="span" className="font-medium mt-2 text-right" />
-      </div>
-    </div>
-  </footer>
-);
+    </footer>
+  );
+};
 
 export default Footer;

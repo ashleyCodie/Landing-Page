@@ -2,8 +2,8 @@
 import React, { useState } from "react";
 import items from "../items.tsx";
 import Footer from "../sections/Footer";
-import Card from "../components/reusable/Card";
-import CardItem from "../components/reusable/CardItem";
+import Card from "../components/ui/Card.tsx";
+import CardItem from "../components/ui/CardItem.tsx";
 
 const shoeTypes = [
   "All", "Runner", "Trail", "Sneaker", "Cushion", "Mesh", "Sprint", "Marathon", "Street", "Trainer", "Leather", "Flex", "Power", "Court", "Terrain", "Slip-On"

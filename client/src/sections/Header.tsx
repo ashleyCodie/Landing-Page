@@ -1,9 +1,9 @@
 
 
 import { Link } from "react-router-dom";
-import Heading from "../components/reusable/Heading";
-import Button from "../components/reusable/Button";
-import Paragraph from "../components/reusable/paragraph";
+import Heading from "../components/ui/Heading";
+import Button from "../components/ui/Button";
+import Paragraph from "../components/ui/paragraph";
 
 const Header: React.FC = () => (
   <header className="w-full bg-teal-50 shadow flex items-center justify-between px-6 py-4 border-b border-teal-200">

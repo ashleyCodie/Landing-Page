@@ -1,9 +1,9 @@
 
 
 import React from "react";
-import Heading from "../components/reusable/Heading";
-import Paragraph from "../components/reusable/paragraph";
-import Button from "../components/reusable/Button";
+import Heading from "../components/ui/Heading";
+import Paragraph from "../components/ui/paragraph";
+import Button from "../components/ui/Button";
 
 const Hero: React.FC = () => (
   <section

@@ -1,7 +1,7 @@
 
 import React from "react";
 import Footer from "../sections/Footer";
-import Card from "../components/reusable/Card";
+import Card from "../components/ui/Card";
 
 const Contact: React.FC = () => (
   <div className="flex flex-col min-h-screen bg-[#F8FAFC]">
