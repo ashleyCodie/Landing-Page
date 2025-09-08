@@ -44,12 +44,12 @@ import Paragraph from "../components/ui/Paragraph";
 // The Header component displays the top navigation bar.
 // It uses a <header> HTML element for semantic structure.
 const Header: React.FC = () => (
-  <header className="w-full bg-teal-50 shadow flex items-center justify-between px-6 py-4 border-b border-teal-200">
+  <header className="w-full bg-gray-200 shadow flex items-center justify-between px-6 py-4 border-b border-teal-200">
   {/* Logo and site name. Update src or text to change branding. */}
   {/* The Link component lets users click the logo to go to the homepage. */}
   <Link to="/" className="flex items-center gap-2 group" aria-label="Go to homepage">
   {/* The logo image. Change src to use a different logo. */}
-  <img src="/assets/logo.svg" alt="ShoeStyle Logo" className="h-8 w-8 transition-transform group-hover:scale-105" />
+  <img src="/images/shoe36.jpg" alt="ShoeStyle Logo" className="h-8 w-8 transition-transform group-hover:scale-105" />
   {/* The site name. Change text to rename the site. */}
   <Heading text="ShoeStyle" level={3} className="text-teal-700 mb-0 font-bold tracking-tight" />
     </Link>

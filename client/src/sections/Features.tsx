@@ -38,17 +38,17 @@ const features = [
 // This is the main Features component. It shows the ShoeStyle Athletics card and the feature cards.
 // If you want to change the layout, update the JSX below. If you want to change the style, update the className values.
 const Features: React.FC = () => (
-  <section className="w-full py-16 bg-[#F8FAFC]">
+  <section className="w-full py-16 bg-gray-200">
     {/* Section title. Change the text to update the heading. */}
     <Heading text="Features" level={2} className="mb-8 text-center" />
     <div className="flex flex-col items-center w-full">
       {/* ShoeStyle Athletics card, logo at top center, text below. Update the text/image to change branding. */}
-      <div className="w-full flex flex-col items-center bg-white border border-[#E2E8F0] rounded-[2rem] shadow p-8 mb-8">
+  <div className="w-full flex flex-col items-center bg-white border border-[#E2E8F0] rounded-[2rem] shadow p-8 mb-8">
         <div className="flex justify-center items-center w-32 h-32 bg-white/80 rounded-2xl shadow-lg mb-4">
-          <img src="/assets/logo.png" alt="Logo" className="w-24 h-24 object-contain" />
+          <img src="/images/shoe36.jpg" alt="Logo" className="w-24 h-24 object-contain" />
         </div>
-        <Heading text="ShoeStyle Athletics" level={2} className="mb-2 font-bold text-[#1E293B] text-center" />
-        <p className="text-[#64748B] text-lg mb-2 text-center">Performance, comfort, and style for every step.</p>
+  <Heading text="ShoeStyle Athletics" level={2} className="mb-2 font-bold text-[#1E293B] text-center" />
+  <p className="text-[#0D47A1] text-lg mb-2 text-center">Performance, comfort, and style for every step.</p>
       </div>
       {/* Feature cards in 2x2 grid. Update, add, or remove cards as needed. */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-center">
@@ -56,7 +56,7 @@ const Features: React.FC = () => (
           <div className="flex flex-col items-center text-center">
             <div className="mb-2">{features[0].icon}</div>
             <h3 className="text-lg font-bold mb-1">{features[0].title}</h3>
-            <p className="text-[#64748B] text-base">{features[0].description}</p>
+            <p className="text-[#0D47A1] text-base">{features[0].description}</p>
           </div>
         </Card>
         <Card>
