@@ -28,10 +28,10 @@ export interface NavBarProps {
 // The cart icon shows how many items are in the cart if cartCount is passed in.
 // The Sign In button lets users go to the sign-in page.
 const NavBar: React.FC<NavBarProps> = ({ cartCount }) => (
-  <nav className="w-full bg-white shadow flex items-center justify-between px-6 py-4 border-b border-gray-200">
+  <nav className="w-full bg-gray-200 shadow flex items-center justify-between px-6 py-4 border-b border-gray-200">
     {/* Logo and site name. Click to go to homepage. */}
     <Link to="/" className="flex items-center gap-2 group" aria-label="Go to homepage">
-      <img src="/assets/logo.svg" alt="ShoeStyle Logo" className="h-8 w-8 transition-transform group-hover:scale-105" />
+  <img src="/images/shoe36.jpg" alt="ShoeStyle Logo" className="h-8 w-8 transition-transform group-hover:scale-105" />
       <Heading text="ShoeStyle" level={3} className="text-teal-700 mb-0 font-bold tracking-tight" />
     </Link>
     {/* Navigation links. Each <li> is a link to a page. */}

@@ -13,7 +13,7 @@ import Card from "../components/ui/Card";
 // This is the main Contact component. It shows support info and a message form.
 // If you want to change the layout, update the JSX below. If you want to change the style, update the className values.
 const Contact: React.FC = () => (
-  <div className="flex flex-col min-h-screen bg-[#F8FAFC]">
+  <div className="flex flex-col min-h-screen bg-gray-200">
     <main className="flex-1 max-w-5xl mx-auto p-8">
       {/* Page title. Change the text to update the heading. */}
       <h2 className="text-3xl font-bold mb-8 text-center text-[#1E293B]">Contact Us</h2>
@@ -24,7 +24,7 @@ const Contact: React.FC = () => (
           <div className="flex flex-col items-center h-full justify-center">
             <h3 className="text-xl font-bold mb-2">Customer Support</h3>
             <p className="text-gray-700 mb-2">Email: support@shoestyle.com | Phone: (555) 123-4567</p>
-            <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=200&q=80" alt="Contact" className="w-24 h-24 rounded-full mb-4 object-cover" />
+            <img src="/images/shoe36.jpg" alt="ShoeStyle Logo" className="w-24 h-24 rounded-full mb-4 object-contain bg-white" />
           </div>
         </Card>
         {/* Message form card. Users can send a message here. Update the form fields as needed. */}
