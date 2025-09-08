@@ -17,9 +17,10 @@ type CardItemProps = {
 // CardItem is a reusable product card. Change the className to update the style for all product cards.
 const CardItem: React.FC<CardItemProps> = ({ item, addToCart }) => {
   // This state tracks which color is selected for the shoe.
-  const [selectedColor, setSelectedColor] = useState(item.colorOptions[0]?.color || "");
-  // This finds the image for the selected color.
-  const selectedImage = item.colorOptions.find(opt => opt.color === selectedColor)?.image || item.image;
+  const [selectedColor, setSelectedColor] = useState("");
+  // If no color is selected, use the default image. If a color is selected, use its image if available, else fallback to default.
+  const colorOption = selectedColor ? item.colorOptions.find(opt => opt.color === selectedColor) : null;
+  const selectedImage = colorOption && colorOption.image ? colorOption.image : item.image;
   return (
     <Card>
       <div className="flex flex-col flex-grow w-full h-full justify-between">
