@@ -15,8 +15,9 @@ const items: Item[] = [
     name: "Tiny Runner (Children)",
     price: "$49.99",
     description: "Lightweight running shoe for kids, designed for comfort and play.",
-    image: "/assets/images/shoe7.jpg",
+    image: "/images/shoe-tiny-default.jpg",
     colorOptions: [
+      { color: "Default", image: "" },
       { color: "Blue", image: "/images/shoe-tiny-blue.jpg" },
       { color: "Pink", image: "/images/shoe-tiny-pink.jpg" },
       { color: "Green", image: "/images/shoe-tiny-green.jpg" },
@@ -29,6 +30,7 @@ const items: Item[] = [
     description: "Breathable mesh shoe for children, perfect for active days and playground fun.",
     image: "/assets/images/shoe8.jpg",
     colorOptions: [
+      { color: "Default", image: "/images/shoe-mini-mesh.jpg" },
       { color: "Yellow", image: "/images/shoe-mini-yellow.jpg" },
       { color: "Purple", image: "/images/shoe-mini-purple.jpg" },
       { color: "Aqua", image: "/images/shoe-mini-aqua.jpg" },
@@ -41,6 +43,7 @@ const items: Item[] = [
     description: "Children's tennis shoe for court performance and style.",
     image: "/assets/images/shoe9.jpg",
     colorOptions: [
+      { color: "Default", image: "/images/shoe-kids-court.jpg" },
       { color: "White", image: "/images/shoe-kids-white.jpg" },
       { color: "Red", image: "/images/shoe-kids-red.jpg" },
       { color: "Blue", image: "/images/shoe-kids-blue.jpg" },
