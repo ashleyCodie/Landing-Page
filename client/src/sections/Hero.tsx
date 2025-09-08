@@ -10,17 +10,19 @@ import React from "react";
 import Heading from "../components/ui/Heading";
 import Paragraph from "../components/ui/Paragraph";
 import Button from "../components/ui/Button";
+import shoe2 from "../assets/images/shoe2.jpg"
+
 
 // This is the main Hero component. It shows the logo, site name, heading, description, and buttons.
 // If you want to change the layout, update the JSX below. If you want to change the style, update the className values.
 const Hero: React.FC = () => (
   <section
     className="w-full min-h-[400px] flex items-center justify-center py-16 px-4 relative bg-cover bg-center"
-    style={{ backgroundImage: "url('/assets/hero-bg.jpg')" }}
+    style={{ backgroundImage: `url(${shoe2})` }}
     aria-label="Hero Banner"
   >
     {/* Background overlay for dark effect. */}
-    <div className="absolute inset-0 bg-black/20 pointer-events-none" />
+    <div className="absolute inset-0 bg-white/20 pointer-events-none" />
     <div className="relative z-10 w-full max-w-5xl mx-auto flex flex-col items-center justify-center gap-6 text-center">
       {/* Logo and brand name side by side at top. Update the image or text to change branding. */}
       <div className="flex flex-row items-center justify-center gap-3 w-full mb-2">
