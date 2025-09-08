@@ -1,15 +1,26 @@
 
+// This file shows all the products (shoes) on the website.
+// It lets users search, filter, and add shoes to their cart.
+// If you want to change what shoes are shown, update items.tsx.
+// If you want to change the layout or style, edit the className values (these use Tailwind CSS).
+// If you see an error, check that all imported files exist and are spelled correctly.
+// If you want to debug, use your browser's developer tools to inspect the page and see if buttons/filters work as expected.
+// Anyone can update this file by following the comments and examples below.
 import React, { useState } from "react";
 import items from "../items.tsx";
 import Footer from "../sections/Footer";
 import Card from "../components/ui/Card.tsx";
 import CardItem from "../components/ui/CardItem.tsx";
 
+// These are the types of shoes and genders you can filter by.
+// To add a new type or gender, add it to the list below.
 const shoeTypes = [
   "All", "Runner", "Trail", "Sneaker", "Cushion", "Mesh", "Sprint", "Marathon", "Street", "Trainer", "Leather", "Flex", "Power", "Court", "Terrain", "Slip-On"
 ];
 const genders = ["All", "Men", "Women", "Children"];
 
+// This function figures out what type of shoe each product is, based on its name.
+// If you add a new shoe type, update this function so it can be found in filters.
 function getShoeType(name: string) {
   const lower = name.toLowerCase();
   if (lower.includes("runner")) return "Runner";
@@ -30,17 +41,26 @@ function getShoeType(name: string) {
 }
 
 
+// These are the props (inputs) for the Products page.
+// addToCart: function to add a shoe to the cart.
+// cart: the current items in the cart (not used here, but can be).
+// confirmation: message to show when an item is added to cart.
 export type ProductsProps = {
   addToCart: (itemName: string, color: string, price: string) => void;
   cart: { name: string; color: string; price: string }[];
   confirmation: string;
 };
 
+// This is the main Products component. It shows the product list and handles searching, filtering, and adding to cart.
+// If you want to change the layout, update the JSX below. If you want to change the style, update the className values.
 const Products: React.FC<ProductsProps> = ({ addToCart, confirmation }) => {
+  // These are the search/filter states. They control what shoes are shown.
   const [search, setSearch] = useState("");
   const [shoeType, setShoeType] = useState("All");
   const [gender, setGender] = useState("All");
 
+  // This filters the items based on search, type, and gender.
+  // If you want to change how filtering works, update this function.
   const filteredItems = items.filter((item) => {
     const matchesSearch = item.name.toLowerCase().includes(search.toLowerCase()) || item.description.toLowerCase().includes(search.toLowerCase());
     const type = getShoeType(item.name);
@@ -56,9 +76,11 @@ const Products: React.FC<ProductsProps> = ({ addToCart, confirmation }) => {
     return matchesSearch && matchesType && matchesGender;
   });
 
+  // This is the layout for the Products page.
+  // If you want to change the look, update the className values or add/remove sections.
   return (
     <div className="flex flex-col min-h-screen bg-gradient-to-br from-[#F8FAFC] via-[#E0F2FE] to-[#A7F3D0]">
-      {/* NavBar removed to prevent double rendering; handled by App */}
+      {/* Shows a confirmation message when an item is added to cart. */}
       {confirmation && (
         <div className="flex justify-center mt-2 mb-4">
           <div className="flex items-center gap-2 bg-[#20B2AA] text-white px-6 py-3 rounded-lg shadow-lg text-lg font-semibold animate-bounce">
@@ -68,7 +90,9 @@ const Products: React.FC<ProductsProps> = ({ addToCart, confirmation }) => {
         </div>
       )}
       <main className="flex-1 max-w-7xl mx-auto p-8 text-center">
+        {/* Page title */}
         <h2 className="text-3xl font-bold mb-8 text-center text-[#1E293B]">Our Products</h2>
+        {/* Search and filter controls. Change these to update how users search/filter shoes. */}
         <div className="flex flex-col md:flex-row gap-4 mb-8 justify-center items-center">
           <input
             type="text"
@@ -84,7 +108,7 @@ const Products: React.FC<ProductsProps> = ({ addToCart, confirmation }) => {
             {genders.map(g => <option key={g} value={g}>{g}</option>)}
           </select>
         </div>
-        {/* Static demo card at top */}
+        {/* Demo card at top. You can remove or update this card to show a featured product. */}
         <div className="flex justify-center mb-8">
           <div className="flex-[1_1_22%] max-w-[22%] min-w-[250px] flex p-6">
             <Card>
@@ -125,6 +149,7 @@ const Products: React.FC<ProductsProps> = ({ addToCart, confirmation }) => {
             </Card>
           </div>
         </div>
+        {/* This section shows all the filtered products. If you want to change the layout, update the className or structure below. */}
         <div className="flex flex-wrap gap-[20px] justify-center items-stretch">
           {filteredItems.map((item) => (
             <div key={item.id} className="flex-[1_1_22%] max-w-[22%] min-w-[250px] flex p-6">
@@ -133,6 +158,7 @@ const Products: React.FC<ProductsProps> = ({ addToCart, confirmation }) => {
           ))}
         </div>
       </main>
+      {/* Footer at the bottom of the page. */}
       <Footer />
     </div>
   );
