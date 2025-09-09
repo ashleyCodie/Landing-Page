@@ -38,7 +38,7 @@ const features = [
 // This is the main Features component. It shows the ShoeStyle Athletics card and the feature cards.
 // If you want to change the layout, update the JSX below. If you want to change the style, update the className values.
 const Features: React.FC = () => (
-  <section className="w-full py-16 bg-gray-200">
+  <section className="w-full py-16 bg-gray-50">
     {/* Section title. Change the text to update the heading. */}
     <Heading text="Features" level={2} className="mb-8 text-center" />
     <div className="flex flex-col items-center w-full">
@@ -47,8 +47,8 @@ const Features: React.FC = () => (
         <div className="flex justify-center items-center w-32 h-32 bg-white/80 rounded-2xl shadow-lg mb-4">
           <img src="/images/shoe36.jpg" alt="Logo" className="w-24 h-24 object-contain" />
         </div>
-  <Heading text="ShoeStyle Athletics" level={2} className="mb-2 font-bold text-[#1E293B] text-center" />
-  <p className="text-[#0D47A1] text-lg mb-2 text-center">Performance, comfort, and style for every step.</p>
+    <Heading text="ShoeStyle Athletics" level={2} className="mb-2 text-6xl font-extrabold text-[#1E293B] text-center" />
+    <p className="text-[#0D47A1] text-lg mb-2 text-center font-extrabold">Performance, comfort, and style for every step.</p>
       </div>
       {/* Feature cards in 2x2 grid. Update, add, or remove cards as needed. */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-center">
@@ -56,28 +56,32 @@ const Features: React.FC = () => (
           <div className="flex flex-col items-center text-center">
             <div className="mb-2">{features[0].icon}</div>
             <h3 className="text-lg font-bold mb-1">{features[0].title}</h3>
-            <p className="text-[#0D47A1] text-base">{features[0].description}</p>
+            <p className="text-[#0D47A1] text-base font-extrabold">{features[0].description}</p>
+            <img src="/images/shoe1.jpg" alt="Lightweight Design Shoe" className="w-40 h-32 object-contain mt-4 mb-2 rounded-xl shadow" />
           </div>
         </Card>
         <Card>
           <div className="flex flex-col items-center text-center">
             <div className="mb-2">{features[1].icon}</div>
             <h3 className="text-lg font-bold mb-1">{features[1].title}</h3>
-            <p className="text-[#64748B] text-base">{features[1].description}</p>
+            <p className="text-[#64748B] text-base font-extrabold">{features[1].description}</p>
+            <img src="/images/shoe10.jpg" alt="Durable Materials Shoe" className="w-40 h-32 object-contain mt-4 mb-2 rounded-xl shadow" />
           </div>
         </Card>
         <Card>
           <div className="flex flex-col items-center text-center">
             <div className="mb-2">{features[2].icon}</div>
             <h3 className="text-lg font-bold mb-1">{features[2].title}</h3>
-            <p className="text-[#64748B] text-base">{features[2].description}</p>
+            <p className="text-[#64748B] text-base font-extrabold">{features[2].description}</p>
+            <img src="/images/shoe20.jpg" alt="Responsive Cushioning Shoe" className="w-40 h-32 object-contain mt-4 mb-2 rounded-xl shadow" />
           </div>
         </Card>
         <Card>
           <div className="flex flex-col items-center text-center">
             <div className="mb-2">{features[3].icon}</div>
             <h3 className="text-lg font-bold mb-1">{features[3].title}</h3>
-            <p className="text-[#64748B] text-base">{features[3].description}</p>
+            <p className="text-[#64748B] text-base font-extrabold">{features[3].description}</p>
+            <img src="/images/shoe30.jpg" alt="Breathable Mesh Shoe" className="w-40 h-32 object-contain mt-4 mb-2 rounded-xl shadow" />
           </div>
         </Card>
       </div>
