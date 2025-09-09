@@ -25,13 +25,13 @@ const Hero: React.FC = () => (
       {/* Logo and brand name side by side at top. Update the image or text to change branding. */}
       <div className="flex flex-row items-center justify-center gap-3 w-full mb-2">
         <div className="flex flex-col items-center w-full mb-2">
-          <img src="/images/shoe36.jpg" alt="ShoeStyle Logo" className="h-20 w-20 mb-2" />
-          <Heading text="ShoeStyle" level={1} className="text-center text-[10rem] text-teal-700 mb-0 font-extrabold tracking-tight" />
+          <img src="/images/shoe36.jpg" alt="ShoeStyle Logo" className="h-32 w-32 mb-2" />
+          <Heading text="ShoeStyle" level={1} className="text-center text-[100rem] text-teal-700 mb-0 font-extrabold tracking-tight" />
         </div>
       </div>
       {/* Heading and paragraph below logo. Update the text to change the main message. */}
-  <Heading text="Step Into Performance" level={1} className="mb-2 font-bold text-[#1E293B] drop-shadow-lg text-center w-full" />
-  <Paragraph text="Discover the latest in athletic footwear engineered for comfort, style, and speed. ShoeStyle Athletics brings you the best for every run, every trail, every day." variant="body" className="mt-12 mb-4 text-[#0D47A1] mx-auto text-center w-full" />
+  <Heading text="Step Into Performance" level={1} className="mb-4 font-bold text-[#1E293B] drop-shadow-lg text-center w-full" />
+  <Paragraph text={"Discover the latest in athletic footwear engineered for comfort, style, and speed.\nShoeStyle Athletics brings you the best for every run, every trail, every day."} variant="body" className={"mb-2 text-black text-6xl font-extrabold tracking-wide drop-shadow-lg mx-auto text-center whitespace-pre-line"} />
       {/* Buttons centered below paragraph. Update the text or add more buttons as needed. */}
       <div className="flex flex-row gap-4 mb-4 items-center justify-center w-full">
         <Button variant="primary" size="lg" className="shadow-lg w-48">Shop Now</Button>

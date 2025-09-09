@@ -166,4 +166,4 @@ const Products: React.FC<ProductsProps> = ({ addToCart, confirmation }) => {
 
 export default Products;
 
-// ...existing code...
+      
