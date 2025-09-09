@@ -64,7 +64,7 @@ const Features: React.FC = () => (
           <div className="flex flex-col items-center text-center">
             <div className="mb-2">{features[1].icon}</div>
             <h3 className="text-lg font-bold mb-1">{features[1].title}</h3>
-            <p className="text-[#64748B] text-base font-extrabold">{features[1].description}</p>
+            <p className="text-[#0D47A1] text-base font-extrabold">{features[1].description}</p>
             <img src="/images/shoe10.jpg" alt="Durable Materials Shoe" className="w-40 h-32 object-contain mt-4 mb-2 rounded-xl shadow" />
           </div>
         </Card>
@@ -72,7 +72,7 @@ const Features: React.FC = () => (
           <div className="flex flex-col items-center text-center">
             <div className="mb-2">{features[2].icon}</div>
             <h3 className="text-lg font-bold mb-1">{features[2].title}</h3>
-            <p className="text-[#64748B] text-base font-extrabold">{features[2].description}</p>
+            <p className="text-[#0D47A1] text-base font-extrabold">{features[2].description}</p>
             <img src="/images/shoe20.jpg" alt="Responsive Cushioning Shoe" className="w-40 h-32 object-contain mt-4 mb-2 rounded-xl shadow" />
           </div>
         </Card>
@@ -80,7 +80,7 @@ const Features: React.FC = () => (
           <div className="flex flex-col items-center text-center">
             <div className="mb-2">{features[3].icon}</div>
             <h3 className="text-lg font-bold mb-1">{features[3].title}</h3>
-            <p className="text-[#64748B] text-base font-extrabold">{features[3].description}</p>
+            <p className="text-[#0D47A1] text-base font-extrabold">{features[3].description}</p>
             <img src="/images/shoe30.jpg" alt="Breathable Mesh Shoe" className="w-40 h-32 object-contain mt-4 mb-2 rounded-xl shadow" />
           </div>
         </Card>
